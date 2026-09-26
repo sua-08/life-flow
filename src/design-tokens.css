@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "Life Flow Delta";
+  src: url("./assets/DeltaDotumKR.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+:root {
+  /* V6.1 — Soft diary palette. Functional state colors are reserved for V6.4. */
+  --lf-paper: #fffdf3;
+  --lf-desktop: #f5f0e6;
+  --lf-white: #fffefb;
+  --lf-pink: #f4dce4;
+  --lf-complete-pink: #e7a4c4;
+  --lf-pink-light: #fbedef;
+  --lf-blue: #dce9f3;
+  --lf-selection-blue: #87abc2;
+  --lf-hover-yellow: #efecaa;
+  --lf-blue-light: #edf3f8;
+  --lf-lavender: #e8e1ef;
+  --lf-lavender-light: #f4eff7;
+  --lf-periwinkle: #dfe2f1;
+  --lf-periwinkle-light: #eff0f8;
+  --lf-backdrop: #50566f50;
+  --lf-mint: #e6eddf;
+  --lf-butter: #f4edcb;
+  --lf-ink: #50566f;
+  --lf-muted: #717389;
+  --lf-outline: #a7a4b8;
+  --lf-outline-light: #d7d0d9;
+  --lf-highlight: #fffefa;
+  --lf-focus: #696395;
+  --lf-current: #7a638c;
+  --lf-current-bg: #f9e8ef;
+  --lf-suggested: #7389a3;
+  --lf-completed: #737c91;
+  --lf-skipped: #858191;
+  --lf-danger: #99586c;
+  --lf-error-bg: #fbe9e7;
+  --lf-font-ui: "Malgun Gothic", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+  --lf-font-pixel: "Life Flow Delta", "Malgun Gothic", sans-serif;
+  --lf-font-label: var(--lf-font-pixel);
+  --lf-type-small: 11px;
+  --lf-type-body: 13px;
+  --lf-type-title: 18px;
+  --lf-space-1: 4px;
+  --lf-space-2: 8px;
+  --lf-space-3: 12px;
+  --lf-space-4: 16px;
+  --lf-space-5: 20px;
+  --lf-radius: 2px;
+  --lf-line: 1px solid var(--lf-outline);
+  --lf-shadow: 2px 3px 0 #d5d1df;
+  --lf-inset: inset 1px 1px 0 var(--lf-highlight), inset -1px -1px 0 var(--lf-outline-light);
+}

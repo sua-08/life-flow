@@ -1,0 +1,11 @@
+/* V6.6 — deterministic edge details; no interactive content is rotated. */
+.pixel-motif { width: 18px; height: 18px; color: var(--lf-muted); flex-shrink: 0; }
+.frame-caption { display: flex; gap: 7px; align-items: center; color: var(--lf-muted); font: 11px var(--lf-font-label); margin-left: auto; padding-right: var(--lf-space-3); }
+.frame-caption .pixel-motif { transform: rotate(-7deg); width: 21px; height: 21px; }
+.section-heading h2 { position: relative; }
+.section-heading h2::after { content: ''; display: block; height: 3px; background: var(--lf-pink); width: 34px; margin-top: 3px; transform: rotate(-1deg); pointer-events: none; }
+.time-block .block-header::after { content: ''; width: 24px; height: 8px; flex-shrink: 0; margin-left: auto; border-top: 1px dotted var(--lf-muted); border-bottom: 1px dotted var(--lf-muted); opacity: .6; }
+.time-block .time-badge { margin-left: auto; }
+.time-block .block-header:has(.time-badge)::after { display: none; }
+.brand-mark { transform: rotate(-2deg); }
+@media (max-width: 960px) { .frame-caption { display: none; } }

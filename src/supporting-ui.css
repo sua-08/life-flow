@@ -1,0 +1,48 @@
+/* V6.5 — small desktop controls, shared with the window frames. */
+.input-wrap input { font-size: 12px; color: var(--lf-ink); line-height: 1.6; }
+.input-wrap input::placeholder { color: var(--lf-muted); }
+.input-error { color: var(--lf-danger); font-size: var(--lf-type-small); }
+.add-row kbd { color: var(--lf-muted); font-family: var(--lf-font-label); }
+.edit-input { background: var(--lf-white); border-bottom: 1px dotted var(--lf-focus); }
+.empty-block { color: var(--lf-muted); gap: var(--lf-space-1); }
+.empty-block > span { color: var(--lf-outline); font: 22px var(--lf-font-label); margin: 0; }
+.empty-block p { font-size: 12px; }
+.empty-block small { font-size: 10px; margin-top: 0; color: var(--lf-muted); }
+.card-list::-webkit-scrollbar { width: 9px; }
+.card-list::-webkit-scrollbar-track { background: var(--lf-paper); }
+.card-list::-webkit-scrollbar-thumb { background: var(--lf-outline-light); border: 2px solid var(--lf-paper); }
+.context-menu {
+  padding: 3px; width: 168px;
+  border: var(--lf-line); border-radius: var(--lf-radius);
+  background: var(--lf-paper); box-shadow: var(--lf-shadow), var(--lf-inset);
+}
+.context-menu button { border-radius: var(--lf-radius); padding: 8px 10px; color: var(--lf-ink); font: 12px var(--lf-font-pixel); }
+.context-menu button:hover, .context-menu button:focus-visible { background: var(--lf-blue); }
+.context-menu .danger { color: var(--lf-danger); }
+.delete-dialog {
+  width: 390px; max-width: calc(100vw - 32px);
+  border: var(--lf-line); border-radius: var(--lf-radius);
+  padding: var(--lf-space-4);
+  background: var(--lf-paper); color: var(--lf-ink);
+  box-shadow: var(--lf-shadow), var(--lf-inset);
+}
+.delete-dialog::backdrop { background: var(--lf-backdrop); }
+.delete-dialog h2 {
+  font: 600 14px/1.3 var(--lf-font-pixel);
+  margin: -13px -13px var(--lf-space-4); padding: 8px 10px;
+  background: var(--lf-pink); border: 1px solid var(--lf-outline-light);
+  border-bottom-color: var(--lf-outline); box-shadow: inset 0 1px var(--lf-highlight);
+}
+.delete-dialog p { color: var(--lf-muted); font-size: 12px; line-height: 1.8; margin-top: var(--lf-space-2); }
+.delete-dialog .delete-name { color: var(--lf-ink); background: var(--lf-blue-light); padding: 5px var(--lf-space-2); border-left: 2px solid var(--lf-outline); }
+.dialog-actions { margin-top: var(--lf-space-5); gap: var(--lf-space-2); }
+.dialog-actions button { border: var(--lf-line); border-radius: var(--lf-radius); padding: 6px 12px; background: var(--lf-blue); color: var(--lf-ink); box-shadow: var(--lf-inset); font: 11px var(--lf-font-pixel); }
+.dialog-actions .delete-confirm { background: var(--lf-pink); color: var(--lf-danger); }
+.dialog-actions button:hover { filter: brightness(.98); }
+.save-warning {
+  flex-shrink: 0; color: var(--lf-danger); background: var(--lf-error-bg);
+  border: 1px solid var(--lf-danger); border-radius: var(--lf-radius);
+  padding: var(--lf-space-2) var(--lf-space-3); line-height: 1.6;
+}
+.save-warning button { color: var(--lf-danger); }
+.loading-screen { background: var(--lf-paper); color: var(--lf-ink); }

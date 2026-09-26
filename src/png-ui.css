@@ -1,0 +1,135 @@
+/* User-drawn 1120 × 800 skin. The artboard keeps its aspect ratio. */
+body, #root { min-width: 1120px; min-height: 800px; }
+body { display: grid; place-items: start center; overflow: auto; background: #fefaef; }
+
+.app {
+  position: relative;
+  isolation: isolate;
+  width: 1120px;
+  height: 800px;
+  min-width: 1120px;
+  min-height: 800px;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  overflow: hidden;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.png-skin { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.png-skin img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.app > :not(.png-skin) { position: relative; z-index: 1; }
+
+/* The supplied lettering layer is the fixed 1120 × 800 typography reference. */
+.app > :not(.png-skin) { z-index: 2; }
+.panel-header-overlay {
+  position: absolute !important; inset: 0; z-index: 4 !important; width: 100%; height: 100%; pointer-events: none;
+}
+.panel-header-overlay-top { clip-path: inset(21.25% 0 71.75% 0); }
+.panel-header-overlay-bottom { clip-path: inset(58.25% 0 34.75% 0); }
+.tape-overlay { position: absolute !important; inset: 0; z-index: 5 !important; width: 100%; height: 100%; pointer-events: none; }
+.lettering-overlay { position: absolute !important; inset: 0; z-index: 6 !important; width: 100%; height: 100%; pointer-events: none; }
+.late-night-lettering-overlay {
+  position: absolute !important; inset: 0; z-index: 7 !important; width: 100%; height: 100%; pointer-events: none;
+  transform: translate(4px, 4px) rotate(2deg); transform-origin: 1020px 475px;
+}
+.brand, .frame-caption, .section-heading, .time-block .block-header, .app > footer { opacity: 0; pointer-events: none; }
+
+.app-header {
+  position: absolute !important;
+  top: 2.5%; left: 3%; right: 3%; height: 10%; min-height: 0;
+  margin: 0; padding: 0 1%;
+  border: 0; background: transparent; box-shadow: none;
+}
+.brand-mark { width: 3.1vw; max-width: 34px; height: 3.1vw; max-height: 34px; background: transparent; border: 0; box-shadow: none; }
+.brand h1 { font-size: clamp(13px, 1.6vw, 18px); }
+.brand p { font-size: clamp(7px, .8vw, 11px); }
+.date { position: absolute; top: 31px; right: 0; width: 185px; padding: 0; border: 0; background: transparent; box-shadow: none; gap: 5px; pointer-events: none; }
+.date strong { font-size: 14px; }
+.date span { font-size: 12px; }
+.frame-caption { font-size: clamp(7px, .75vw, 11px); }
+
+.section-heading {
+  position: absolute !important;
+  top: 13.1%; left: 6.4%; right: 6.1%; height: 4.5%;
+  padding: 0; margin: 0;
+}
+.section-heading h2 { font-size: clamp(10px, 1.2vw, 14px); }
+.eyebrow, .count, .plan-actions button { font-size: clamp(7px, .85vw, 11px); }
+.plan-actions button { padding: 3px 7px; }
+
+.flow-grid {
+  position: absolute !important;
+  left: 6.4%; right: 6.1%; top: 20.8%; bottom: 10.4%;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 8.3% 2.8%;
+}
+.time-block { position: relative; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; overflow: hidden; }
+.time-block .block-header {
+  min-height: 19%; margin: 0; padding: 2.5% 4%; border: 0; background: transparent; box-shadow: none;
+}
+.time-block .block-symbol { width: clamp(18px, 2.2vw, 25px); height: clamp(18px, 2.2vw, 25px); border: 0; background: transparent; box-shadow: none; }
+.time-block .block-title h3 { font-size: clamp(9px, 1.1vw, 13px); }
+.time-block .block-number, .time-block .block-title p, .time-block .time-badge { font-size: clamp(6px, .75vw, 10px); }
+.time-block .time-badge { border: 0; background: transparent; box-shadow: none; }
+
+.time-block .card-list { margin-right: 6px; padding: 4.5% 4.8% 1%; background: transparent; }
+.starter-card {
+  display: block; width: 100%; min-height: 45px; padding: 0; border: 0; border-radius: 0;
+  background: url('./assets/ui/card.png') center / 100% 100% no-repeat; box-shadow: none;
+}
+.starter-card:hover:not(:disabled) { background: url('./assets/ui/hover-card.png') center / 100% 100% no-repeat; }
+.flow-card {
+  min-height: clamp(28px, 4vw, 45px);
+  padding: 1.1% 3%; gap: 2%;
+  border: 0; border-radius: 0; box-shadow: none;
+  background: url('./assets/ui/card.png') center / 100% 100% no-repeat;
+}
+.flow-card:hover { border: 0; background: url('./assets/ui/hover-card.png') center / 100% 100% no-repeat; }
+.flow-card.current-card {
+  padding: 1.1% 3%; border: 0;
+  background: url('./assets/ui/current-border.png') center / 100% 100% no-repeat, url('./assets/ui/card.png') center / 100% 100% no-repeat;
+  box-shadow: none;
+}
+.flow-card.suggested-card { padding: 1.1% 3%; border: 0; outline: 1px dashed var(--lf-suggested); outline-offset: -2px; box-shadow: none; }
+.flow-card.current-card.suggested-card { outline: 1px dashed var(--lf-suggested); outline-offset: 2px; }
+.card-index { font-family: var(--lf-font-pixel); font-size: 20px; line-height: 1; }
+.card-name { font-family: var(--lf-font-pixel); font-size: 20px; line-height: 1.1; }
+.connector { width: clamp(12px, 1.6vw, 19px); height: clamp(10px, 1.4vw, 17px); margin-left: 3%; padding: 0; background: url('./assets/ui/arrow.png') center / 100% 100% no-repeat; color: transparent; }
+
+.execution-actions { flex-wrap: nowrap; margin-left: auto; gap: 2%; }
+.skip-button { flex: 0 0 auto; white-space: nowrap; font-size: clamp(8px, .9vw, 12px); }
+.complete-button {
+  min-width: clamp(38px, 4.3vw, 54px); min-height: clamp(22px, 2.6vw, 31px); padding: 0 6px;
+  border: 0; background: url('./assets/ui/complete-button.png') center / 100% 100% no-repeat; box-shadow: none;
+  font-size: clamp(9px, 1vw, 13px);
+}
+.complete-button:hover { background: url('./assets/ui/complete-button.png') center / 100% 100% no-repeat; filter: brightness(1.04); }
+.time-block .add-row { display: flex; justify-content: center; margin: 18px 0 6px; padding: 0; border: 0; background: transparent; box-shadow: none; }
+.add-card-button {
+  width: clamp(22px, 3.2vw, 36px); height: clamp(22px, 3.2vw, 36px); padding: 0;
+  border: 0; border-radius: 50%; background: url('./assets/ui/add.png') center / 100% 100% no-repeat; box-shadow: none;
+}
+.add-card-button:hover:not(:disabled) { filter: brightness(1.06); transform: scale(1.04); }
+.add-card-button:disabled { opacity: .45; }
+.draft-card-row { list-style: none; }
+.draft-card { cursor: text; }
+.draft-card:hover { background: url('./assets/ui/card.png') center / 100% 100% no-repeat; }
+.draft-card .edit-input { flex: 1; min-width: 0; background: transparent; border: 0; }
+.draft-card .input-wrap { width: 100%; }
+.draft-card .input-wrap input, .edit-input .input-wrap input {
+  width: 100%; min-width: 0; background: transparent; border: 0; outline: 0;
+  font-family: var(--lf-font-pixel); font-size: 20px; line-height: 1.1;
+}
+.app > footer { position: absolute !important; left: 2.6%; right: 2.6%; bottom: 2.6%; border: 0; padding: 0; font-size: clamp(6px, .72vw, 10px); }
+
+.context-menu { border: 0; border-radius: 0; box-shadow: none; background: url('./assets/ui/context-menu.png') center / 100% 100% no-repeat; padding: 8px 10px; }
+.context-menu button { background: transparent; }
+.context-menu button:hover, .context-menu button:focus-visible { background: transparent; text-decoration: underline; }
+
+@media (max-width: 900px), (max-height: 640px) {
+  .brand p, .frame-caption, .eyebrow { display: none; }
+  .execution-actions small { display: none; }
+}
